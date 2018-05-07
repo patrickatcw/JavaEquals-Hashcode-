@@ -156,6 +156,11 @@ public class Main {
 
         //step 4 this program go to heavenlybody class
 
+        //step 6 this program to run.....we can see hashcode called and
+        //obj.getClass() is class com.patrick.HeavenlyBody
+        //this.getClass() is class com.patrick.HeavenlyBody and
+        //the duplicate 2nd pluto was not added!!!!
+
     }
 
 }
