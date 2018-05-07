@@ -1,5 +1,14 @@
 package me;
 //starting with code from JavaSetAndHashset
+//set will ensure no duplicates in a collection, as opposed to a list
+//https://www.javaworld.com/article/2074996/hashcode-and-equals-method-in-java-object---a-pragmatic-concept.html
+//hashcode will check to see if objects are equal before storing
+//there has to be a strict relationship between hashcode and equals
+//**if 2 objects compare equal, than they must have the same hashcode
+//how to override hashcode....
+//https://www.mkyong.com/java/java-how-to-overrides-equals-and-hashcode/
+//the rules of equals
+//https://docs.oracle.com/javase/7/docs/api/java/lang/Object.html
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -122,6 +131,30 @@ public class Main {
             System.out.println("\t" + moon.getName());
             //step 21 run to test.....heck yeah!
         }
+
+        //what happens when you don't override
+        //step 1 this program create a new pluto object
+        //note the original pluto with 248 in original code
+        HeavenlyBody pluto = new HeavenlyBody("Pluto", 842);
+        planets.add(pluto);
+        for(HeavenlyBody planet : planets){
+            System.out.println(planet.getName() + ": " + planet.getOrbitalPeriod());
+            //step 2 this program run.....Pluto is shown twice
+            //we have 2 objects(not typical in sets) because the 2
+            //pluto objects do not compare equal, this is why we need
+            //to overwrite
+        }
+
+        //step 3 this program, but before we override here is base object code built into Java
+        //press control & click on equals to see code to see what doing
+        //shows how the plutos are equal which we do not want
+        //and you can do the same with the string equals, the 2nd one
+        //equals() for String compares the content, not the object itself
+        Object o = new Object();
+        o.equals(o);
+        "pluto".equals("");
+
+        //step 4 this program go to heavenlybody class
 
     }
 
